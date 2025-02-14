@@ -2,12 +2,10 @@ package com.sematext.jenkins.plugins.metrics;
 
 import com.sematext.jenkins.plugins.utils.TagUtils;
 
-import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public enum Metrics {
   TOKEN_CHECK("token.check", "token check", "Special metric we send from plugin when user click 'Test Token' button."),

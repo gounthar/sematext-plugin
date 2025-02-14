@@ -4,7 +4,8 @@ import com.sematext.jenkins.plugins.client.SematextHttpClient;
 import com.sematext.jenkins.plugins.tags.JobTags;
 import hudson.Extension;
 import hudson.ExtensionList;
-import hudson.model.*;
+import hudson.model.Run;
+import hudson.model.TaskListener;
 import hudson.model.listeners.RunListener;
 import jenkins.metrics.impl.TimeInQueueAction;
 
