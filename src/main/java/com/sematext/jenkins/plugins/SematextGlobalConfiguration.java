@@ -12,7 +12,7 @@ import jenkins.model.Jenkins;
 import net.sf.json.JSONObject;
 import org.kohsuke.stapler.DataBoundSetter;
 import org.kohsuke.stapler.QueryParameter;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerRequest2;
 import org.kohsuke.stapler.interceptor.RequirePOST;
 
 import java.util.Collections;
@@ -93,7 +93,7 @@ public class SematextGlobalConfiguration extends GlobalConfiguration {
   }
 
   @Override
-  public boolean configure(final StaplerRequest req, final JSONObject formData) throws FormException {
+  public boolean configure(final StaplerRequest2 req, final JSONObject formData) throws FormException {
     try {
       if (!super.configure(req, formData)) {
         return false;
