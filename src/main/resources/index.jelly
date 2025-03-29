@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+   This plugin is used to forward metrics, events to your account at Sematext, automatically.
+</div>

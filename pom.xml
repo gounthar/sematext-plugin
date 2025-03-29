@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.4</version>
+        <version>4.88</version>
         <relativePath />
     </parent>
 
@@ -17,8 +17,9 @@
     <packaging>hpi</packaging>
 
     <properties>
-        <jenkins.version>2.235.1</jenkins.version>
-        <java.level>8</java.level>
+        <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+        <jenkins.baseline>2.462</jenkins.baseline>
+        <jenkins.version>${jenkins.baseline}.3</jenkins.version>
         <jenkins.metrics.version>4.0.2.6</jenkins.metrics.version>
         <jenkins.jackson2-api.version>2.11.2</jenkins.jackson2-api.version>
     </properties>
@@ -32,16 +33,8 @@
         </license>
     </licenses>
 
-    <developers>
-        <developer>
-            <id>sematext</id>
-            <name>Sematext</name>
-            <email>support@sematext.com</email>
-        </developer>
-    </developers>
-
     <scm>
-        <connection>scm:git:git://github.com/jenkinsci/sematext-plugin.git</connection>
+        <connection>scm:git:https://github.com/jenkinsci/sematext-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/sematext-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/sematext-plugin/</url>
         <tag>HEAD</tag>
@@ -65,15 +58,10 @@
         <dependencies>
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.235.x</artifactId>
-                <version>11</version>
+                <artifactId>bom-${jenkins.baseline}.x</artifactId>
+                <version>4228.v0a_71308d905b_</version>
                 <scope>import</scope>
                 <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.30</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -93,7 +81,6 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>jackson2-api</artifactId>
-            <version>${jenkins.jackson2-api.version}</version>
         </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
